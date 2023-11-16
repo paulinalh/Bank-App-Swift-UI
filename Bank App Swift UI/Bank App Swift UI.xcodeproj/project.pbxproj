@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4424D082B0516C800E94DB0 /* Searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4424D072B0516C800E94DB0 /* Searchbar.swift */; };
+		D4424D0A2B052D2600E94DB0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4424D092B052D2600E94DB0 /* HomeView.swift */; };
+		D4424D0D2B05972500E94DB0 /* ColorSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4424D0C2B05972500E94DB0 /* ColorSets.swift */; };
+		D4424D0F2B059C5700E94DB0 /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4424D0E2B059C5700E94DB0 /* MainHeader.swift */; };
+		D4424D112B065C7500E94DB0 /* TransactionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4424D102B065C7500E94DB0 /* TransactionsList.swift */; };
+		D4424D132B065DFD00E94DB0 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4424D122B065DFD00E94DB0 /* TransactionRow.swift */; };
+		D4424D152B066FC400E94DB0 /* ProfileModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4424D142B066FC400E94DB0 /* ProfileModal.swift */; };
 		D4A9CB6D2B050B3F00CD6B81 /* Bank_App_Swift_UIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A9CB6C2B050B3F00CD6B81 /* Bank_App_Swift_UIApp.swift */; };
 		D4A9CB6F2B050B3F00CD6B81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A9CB6E2B050B3F00CD6B81 /* ContentView.swift */; };
 		D4A9CB712B050B3F00CD6B81 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A9CB702B050B3F00CD6B81 /* Item.swift */; };
@@ -15,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4424D072B0516C800E94DB0 /* Searchbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbar.swift; sourceTree = "<group>"; };
+		D4424D092B052D2600E94DB0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D4424D0C2B05972500E94DB0 /* ColorSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSets.swift; sourceTree = "<group>"; };
+		D4424D0E2B059C5700E94DB0 /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
+		D4424D102B065C7500E94DB0 /* TransactionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsList.swift; sourceTree = "<group>"; };
+		D4424D122B065DFD00E94DB0 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		D4424D142B066FC400E94DB0 /* ProfileModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModal.swift; sourceTree = "<group>"; };
 		D4A9CB692B050B3F00CD6B81 /* Bank App Swift UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bank App Swift UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A9CB6C2B050B3F00CD6B81 /* Bank_App_Swift_UIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank_App_Swift_UIApp.swift; sourceTree = "<group>"; };
 		D4A9CB6E2B050B3F00CD6B81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +48,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4424D042B05166D00E94DB0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D4424D072B0516C800E94DB0 /* Searchbar.swift */,
+				D4424D0E2B059C5700E94DB0 /* MainHeader.swift */,
+				D4424D102B065C7500E94DB0 /* TransactionsList.swift */,
+				D4424D122B065DFD00E94DB0 /* TransactionRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D4424D052B05167C00E94DB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9CB6E2B050B3F00CD6B81 /* ContentView.swift */,
+				D4424D092B052D2600E94DB0 /* HomeView.swift */,
+				D4424D142B066FC400E94DB0 /* ProfileModal.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D4424D062B05168F00E94DB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4424D0B2B05971900E94DB0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D4424D0C2B05972500E94DB0 /* ColorSets.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D4A9CB602B050B3F00CD6B81 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +103,11 @@
 		D4A9CB6B2B050B3F00CD6B81 /* Bank App Swift UI */ = {
 			isa = PBXGroup;
 			children = (
+				D4424D0B2B05971900E94DB0 /* Utils */,
+				D4424D062B05168F00E94DB0 /* Models */,
+				D4424D052B05167C00E94DB0 /* Views */,
+				D4424D042B05166D00E94DB0 /* Components */,
 				D4A9CB6C2B050B3F00CD6B81 /* Bank_App_Swift_UIApp.swift */,
-				D4A9CB6E2B050B3F00CD6B81 /* ContentView.swift */,
 				D4A9CB702B050B3F00CD6B81 /* Item.swift */,
 				D4A9CB722B050B4000CD6B81 /* Assets.xcassets */,
 				D4A9CB742B050B4000CD6B81 /* Preview Content */,
@@ -140,8 +193,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4424D132B065DFD00E94DB0 /* TransactionRow.swift in Sources */,
 				D4A9CB6F2B050B3F00CD6B81 /* ContentView.swift in Sources */,
+				D4424D082B0516C800E94DB0 /* Searchbar.swift in Sources */,
 				D4A9CB712B050B3F00CD6B81 /* Item.swift in Sources */,
+				D4424D0F2B059C5700E94DB0 /* MainHeader.swift in Sources */,
+				D4424D152B066FC400E94DB0 /* ProfileModal.swift in Sources */,
+				D4424D0A2B052D2600E94DB0 /* HomeView.swift in Sources */,
+				D4424D0D2B05972500E94DB0 /* ColorSets.swift in Sources */,
+				D4424D112B065C7500E94DB0 /* TransactionsList.swift in Sources */,
 				D4A9CB6D2B050B3F00CD6B81 /* Bank_App_Swift_UIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
