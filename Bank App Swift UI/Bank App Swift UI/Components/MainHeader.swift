@@ -67,7 +67,7 @@ struct MainHeader: View {
                                 .foregroundColor(.white)
                                 .padding()
                         }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    }
+                    }.padding(-10)
                     
                     //Change button
                     Button(action: {
@@ -87,7 +87,7 @@ struct MainHeader: View {
                                 .foregroundColor(.white)
                                 .padding()
                         }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    }
+                    }.padding(-10)
                     
                     //Data button
                     Button(action: {
@@ -107,7 +107,7 @@ struct MainHeader: View {
                                 .foregroundColor(.white)
                                 .padding()
                         }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    }
+                    }.padding(-10)
                     
                     //More button
                     Button(action: {
@@ -127,7 +127,7 @@ struct MainHeader: View {
                                 .foregroundColor(.white)
                                 .padding()
                         }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    }
+                    }.padding(-10)
                     
                     
                     

@@ -16,5 +16,6 @@ struct ColorSets {
     static let gradient3 = Color("Raisin")
     static let gradient4 = Color("Blackberry")
     static let TransactionIcon = Color("VibrantGreen")
+    static let DarkGray = Color("DarkGray")
 
 }

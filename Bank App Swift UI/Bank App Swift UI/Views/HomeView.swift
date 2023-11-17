@@ -16,17 +16,10 @@ struct HomeView: View {
             
             Searchbar(searchText: $text)
             
-            
-                MainHeader().padding(-10)
-                
+            ScrollView{
+                MainHeader()
                 TransactionsList()
-                
-            
-            
-            
-            //.navigationTitle("Tab 1")
-            //.navigationBarTitleDisplayMode(.automatic)
-            //.searchable(text: $text)
+            }.padding(.vertical, -10)
         }
         
     }
