@@ -10,7 +10,8 @@ import SwiftUI
 struct Searchbar: View {
     
     @Binding var searchText: String
-    
+    @Binding var isLeftModalPresented: Bool
+    @Binding var isRightModalPresented: Bool
 
     
     var body: some View {
@@ -19,7 +20,7 @@ struct Searchbar: View {
             //TODO: add the indicator and the animation
             
             Button(action: {
-                //TODO: add action
+                isLeftModalPresented.toggle()
             }) {
                 Image(systemName: "camera")
                 // Profile picture
@@ -28,8 +29,9 @@ struct Searchbar: View {
                     .background(ColorSets.tertiaryColor)
                     .cornerRadius(200)
                     .padding(.horizontal, 1)
-            }
-            
+            }.padding(.horizontal, 5)
+                .accessibilityLabel("Profile Picture")
+                .accessibilityHint("Click twice for opening profile settings")
             
             HStack {
                 Image(systemName: "magnifyingglass") // Search icon
@@ -66,6 +68,8 @@ struct Searchbar: View {
             .background(ColorSets.secondaryColor)
             .cornerRadius(50)
             .padding(.horizontal, 5)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Search bar")
             
             Button(action: {
                 //TODO: add action
@@ -76,10 +80,12 @@ struct Searchbar: View {
                     .background(ColorSets.secondaryColor)
                     .cornerRadius(200)
                     .padding(.horizontal, 1)
-            }
+            }.padding(.horizontal, 5)
+                .accessibilityLabel("Charts buttons")
+                
             
             Button(action: {
-                //TODO: add action
+                isRightModalPresented.toggle()
             }) {
                 
                 Image(systemName: "creditcard") // Credit card
@@ -88,13 +94,16 @@ struct Searchbar: View {
                     .background(ColorSets.secondaryColor)
                     .cornerRadius(200)
                     .padding(.horizontal, 1)
-            }
+            }.padding(.horizontal, 5)
+                .accessibilityLabel("Cards button")
+                .accessibilityHint("Click twice for opening cards settings")
         }
         .frame(height: 60)
         .background(ColorSets.primaryColor)
+        
     }
 }
 
 #Preview {
-    Searchbar(searchText: .constant("text"))
+    Searchbar(searchText: .constant("text"), isLeftModalPresented: .constant(false), isRightModalPresented: .constant(true))
 }

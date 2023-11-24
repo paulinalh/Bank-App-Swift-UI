@@ -16,26 +16,31 @@ struct MainHeader: View {
                 
                 //Money and accounts text
                 VStack{
-                    Text("Principal · EUR")
-                        .font(.subheadline)
-                        .foregroundColor(.white)
                     
-                    HStack(alignment: .bottom){
-                        Text("€26")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                        
-                        Text(".19")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                    }
+                    Text("Main · EUR")
+                        .font(.subheadline)
+                        .foregroundColor(.white).accessibilityLabel("Main currencye euros")
+                    
+                    
+                        HStack(alignment: .bottom){
+                            Text("€26")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                
+                            
+                            Text(".19")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }.accessibilityElement(children: .ignore)
+                        .accessibilityLabel("26.19 euros")
+                    
                     
                     Button(action: {
                         //TODO: add action
                     }) {
-                        Text("Cuentas")
+                        Text("Accounts")
                             .font(.caption)
                             .foregroundColor(.white)
                             .padding()
@@ -43,7 +48,7 @@ struct MainHeader: View {
                                 RoundedRectangle(cornerRadius: 100)
                                     .fill(ColorSets.secondaryColor)
                             )
-                    }
+                    }.accessibilityLabel("accounts")
                     
                 }
                 //Buttons
@@ -67,7 +72,8 @@ struct MainHeader: View {
                                 .foregroundColor(.white)
                                 .padding()
                         }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    }.padding(-10)
+                    }.accessibilityLabel("Add money")
+                    .padding(-10)
                     
                     //Change button
                     Button(action: {
@@ -87,7 +93,8 @@ struct MainHeader: View {
                                 .foregroundColor(.white)
                                 .padding()
                         }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    }.padding(-10)
+                    }.accessibilityLabel("Watch type of change")
+                    .padding(-10)
                     
                     //Data button
                     Button(action: {
@@ -107,7 +114,8 @@ struct MainHeader: View {
                                 .foregroundColor(.white)
                                 .padding()
                         }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    }.padding(-10)
+                    }.accessibilityLabel("Data")
+                    .padding(-10)
                     
                     //More button
                     Button(action: {
@@ -127,7 +135,8 @@ struct MainHeader: View {
                                 .foregroundColor(.white)
                                 .padding()
                         }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    }.padding(-10)
+                    }.accessibilityLabel("More")
+                    .padding(-10)
                     
                     
                     

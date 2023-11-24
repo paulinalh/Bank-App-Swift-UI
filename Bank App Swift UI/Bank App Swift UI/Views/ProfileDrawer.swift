@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileModal: View {
+struct ProfileDrawer: View {
     
     @Binding var isDrawerOpen : Bool
     
@@ -17,17 +17,20 @@ struct ProfileModal: View {
             Color.black.edgesIgnoringSafeArea(.all).opacity(0.8)
             
             ScrollView{
-                VStack{
+                HStack{
+                    Button(action: {
+                        print("...")
+                        isDrawerOpen = false
+                    }, label: {
+                        Image(systemName: "xmark")
+                    }).foregroundColor(ColorSets.tertiaryColor).padding(20)
+                        .accessibilityLabel("Close icon")
+                        .accessibilityHint("Click twice for closing profile settings")
                     
-                    HStack{
-                        Button(action: {
-                            isDrawerOpen.toggle()
-                        }, label: {
-                            Image(systemName: "xmark")
-                        }).foregroundColor(ColorSets.tertiaryColor).padding(20)
-                        
-                        Spacer()
-                    }
+                    Spacer()
+                }
+                
+                VStack{
                     
                     Image(systemName: "camera")
                     // Profile picture
@@ -36,6 +39,7 @@ struct ProfileModal: View {
                         .background(ColorSets.tertiaryColor)
                         .cornerRadius(200)
                         .padding(.horizontal, 1)
+                        .accessibilityLabel("Profile picture")
                     
                     Text("Paulina Lopez Holguin")
                         .font(.largeTitle)
@@ -59,7 +63,9 @@ struct ProfileModal: View {
                         cardItem(titleTop: .constant("Invite your friends"), titleBottom: .constant("Get 50€"), iconName: .constant("person.fill"))
                         
                         
-                    }.padding()
+                    }
+                    .padding()
+                    
                     
                     ZStack(alignment: .leading){
                         
@@ -76,7 +82,8 @@ struct ProfileModal: View {
                             listItem(title: .constant("Inbox"), iconName: .constant("horn.fill"))
                         }.padding(10)
                         
-                    }.padding()
+                    }
+                    .padding()
                     
                     ZStack(alignment: .leading){
                         
@@ -177,5 +184,5 @@ struct ProfileModal: View {
 }
 
 #Preview {
-    ProfileModal(isDrawerOpen: .constant(false))
+    ProfileDrawer(isDrawerOpen: .constant(false))
 }

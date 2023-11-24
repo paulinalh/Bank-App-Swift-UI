@@ -16,14 +16,14 @@ struct ContentView: View {
     @State private var offset: CGFloat = 0
     
     var body: some View {
-        //Drawer
+        //Left Drawer
         GeometryReader { geometry in
             ZStack {
                 // Main content
                 TabView {
                     Group{
                         // Tab 1: Home
-                        HomeView()
+                        HomeView(isLeftModalPresented: $isLeftModalPresented, isRightModalPresented: $isRightModalPresented)
                             .tabItem {
                                 Image(systemName: "parkingsign")
                                     .fontWeight(.bold)
@@ -35,7 +35,7 @@ struct ContentView: View {
                             VStack {
                                 Text("Invest Tab Content")
                                 Button("Show Modal") {
-                                    isLeftModalPresented.toggle()
+                                    //isLeftModalPresented.toggle()
                                 }
                             }
                             .navigationBarTitle("Tab 2", displayMode: .inline)
@@ -93,9 +93,11 @@ struct ContentView: View {
                 .preferredColorScheme(.dark)
                 
                 // Drawer content
-                ProfileModal(isDrawerOpen: $isLeftModalPresented)
+                ProfileDrawer(isDrawerOpen: $isLeftModalPresented)
+                    .navigationBarHidden(true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .offset(x: isLeftModalPresented ? 0 : -geometry.size.width / 2 + offset)
-                    .animation(.default)
+                    
                 
                 // Drag gesture to handle opening and closing drawer
                 if !isLeftModalPresented {
@@ -112,6 +114,37 @@ struct ContentView: View {
                                 .onEnded { value in
                                     if value.translation.width > geometry.size.width * 0.4 {
                                         isLeftModalPresented = true
+
+                                    } else {
+                                        withAnimation {
+                                            offset = 0
+                                        }
+                                    }
+                                }
+                        )
+                }
+                
+                // Drawer content
+                CardDrawer(isDrawerOpen: $isRightModalPresented)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .offset(x: isRightModalPresented ? 0 : geometry.size.width * 2 - offset )
+                    .navigationBarHidden(true)
+                
+                // Drag gesture to handle opening and closing drawer
+                if !isRightModalPresented {
+                    Rectangle()
+                        .foregroundColor(Color.clear)
+                        .contentShape(Rectangle())
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    withAnimation {
+                                        offset = value.translation.width
+                                    }
+                                }
+                                .onEnded { value in
+                                    if value.translation.width > geometry.size.width * 0.4 {
+                                        isRightModalPresented = true
                                     } else {
                                         withAnimation {
                                             offset = 0
@@ -122,7 +155,6 @@ struct ContentView: View {
                 }
             }
         }
-        
     }
     
     
